@@ -1,0 +1,154 @@
+@import "null.scss";
+
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1300;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$fontFamily:"Montserrat";
+
+body{
+	font-family: $fontFamily, sans-serif;
+	background: #e4e4e4;
+}
+
+.container{
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+
+@import "header.scss";
+
+.metodic{
+	margin-top: 100px;
+	color: #383838;
+	.metodic_title{
+		font-weight: 700;
+		font-size: 40px;
+		@media (max-width:480px) {
+			line-height: 60px;
+		}
+		span{
+			background: #ff915d;
+			padding: 0 10px;
+		}
+	}
+	.metodic-content{
+		margin-top: 60px;
+		.content-title{
+			font-weight: 500;
+			font-size: 30px;
+			display: inline-block;
+			padding-right: 20px;
+			@media (max-width: 343px) {
+				padding-right: 20px;
+				width: 200px;
+			}
+		}
+		.metodic-plus{
+			display: inline-block;
+			position: relative;
+			top: 5px;
+			transform: rotate(0deg);
+			transition: .3s;
+			@media (max-width: 343px) {
+				top: -25px;
+				left: 15px;
+			}
+			span{
+				width: 3px;
+				height: 30px;
+				background: #383838;
+				display: block;
+				position: relative;
+				left: -1px;
+				transform: rotate(0deg);
+				transition: .3s;
+				&::before{
+					content: '';
+					width: 2px;
+					height: 30px;
+					background: #383838;
+					display: block;
+					transform: rotate(90deg);
+					transition: .3s;
+				}
+			}
+		}
+		.active{
+			display: inline-block;
+			position: relative;
+			top: 5px;
+			transform: rotate(180deg);
+			transition: .3s;
+			@media (max-width: 343px) {
+				top: -25px;
+				left: 15px;
+			}
+			span{
+				width: 3px;
+				height: 30px;
+				background: #383838;
+				display: block;
+				position: relative;
+				left: -1px;
+				transform: rotate(90deg);
+				transition: .3s;
+				&::before{
+					content: '';
+					width: 2px;
+					height: 30px;
+					background: #383838;
+					display: block;
+					transform: rotate(0deg);
+					transition: .3s;
+					opacity: 0;
+				}
+			}
+		}
+		.background{
+			width: 100%;
+			margin-top: 40px;
+			height: 150px;
+			border-radius: 4px;
+			background-color: #ff915d;
+		}
+		.metodic-card{
+			opacity: 0;
+			transition: .3s;
+			height: 5px;
+			position: relative;
+			top: -40px;
+		}
+	}
+	.active{
+		.metodic-card{
+			opacity: 1;
+			transition: .3s;
+			height: 100px;
+			position: relative;
+			top: 0;
+		}
+	}
+}
+
+.metodic-number{
+	h6{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
